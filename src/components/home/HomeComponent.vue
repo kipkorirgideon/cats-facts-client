@@ -10,6 +10,8 @@
 import FactListComponent from '../facts/FactList.vue';
 import FormInput from '../facts/FormInput.vue';
 
+const url = 'http://localhost:5001/api/cats';
+
 export default {
   name: 'HomeComponent',
   components: {
@@ -22,7 +24,7 @@ export default {
     };
   },
   async created() {
-    const response = await fetch('http://localhost:3001/cats/', {
+    const response = await fetch(`${url}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +36,7 @@ export default {
   },
   methods: {
     async saveUpdate(data) {
-      await fetch(`http://localhost:3001/cats/${data.id}`, {
+      await fetch(`${url}/${data.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +54,7 @@ export default {
         });
     },
     async deleteFact(id) {
-      await fetch(`http://localhost:3001/cats/${id}`, {
+      await fetch(`${url}/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +75,7 @@ export default {
       const newFact = {
         text,
       };
-      await fetch('http://localhost:3001/cats/', {
+      await fetch(`${url}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
