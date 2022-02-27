@@ -31,7 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Run npm install
 # I used bootstrap 5 for general styling
-# Boostrap 5 is cdn
+# Boostrap 5 cdn
 # I used jquery for convenient elements selections and manipulation
 
 
